@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
-BASEURL = 'https://egc-app-heroku-pabcubcru.herokuapp.com'
 
 APIS = {}
 
@@ -77,7 +76,7 @@ MODULES = [
     'voting',
 ]
 
-BASEURL = 'http://localhost:8000'
+BASEURL = 'https://egc-app-heroku-pabcubcru.herokuapp.com'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
