@@ -12,8 +12,16 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+BASEURL = 'https://egc-app-heroku-pabcubcru.herokuapp.com'
+BASEURL = 'https://egc-app-heroku-pabcubcru.herokuapp.com'
+
+APIS = {}
+
+import django_heroku
+django_heroku.settings(locals())
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -70,7 +78,7 @@ MODULES = [
     'voting',
 ]
 
-BASEURL = 'https://egc-app-heroku-pabcubcru.herokuapp.com'
+BASEURL = 'http://localhost:8000'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -81,18 +89,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-APIS = {
-    'authentication': BASEURL,
-    'base': BASEURL,
-    'booth': BASEURL,
-    'census': BASEURL,
-    'mixnet': BASEURL,
-    'postproc': BASEURL,
-    'store': BASEURL,
-    'visualizer': BASEURL,
-    'voting': BASEURL,
-}
 
 ROOT_URLCONF = 'decide.urls'
 
@@ -192,6 +188,3 @@ if os.path.exists("config.jsonnet"):
 
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
-
-import django_heroku
-django_heroku.settings(locals())
